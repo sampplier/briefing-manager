@@ -1,0 +1,41 @@
+{
+  "name": "briefing-manager",
+  "version": "1.0.0",
+  "description": "O **Briefing Manager** é um sistema para gerenciar briefings de clientes, permitindo o cadastro, listagem, edição e remoção de briefings. O sistema conta com filtros por estado e testes automatizados.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --ext ts --exec tsx briefing-manager/backend/src/server.ts",
+    "test": "jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sampplier/briefing-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sampplier/briefing-manager/issues"
+  },
+  "homepage": "https://github.com/sampplier/briefing-manager#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@prisma/client": "^6.4.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.9",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.4.1",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.6",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

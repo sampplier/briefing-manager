@@ -1,0 +1,56 @@
+name: Run Tests and Build
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  backend-tests:
+    name: Run Backend Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Instalar dependências do backend
+        working-directory: backend
+        run: npm install
+
+      - name: Configurar banco de dados PostgreSQL para testes
+        run: |
+          sudo systemctl start postgresql
+          psql -U postgres -c "CREATE DATABASE briefing_test;"
+
+      - name: Executar testes do backend
+        working-directory: backend
+        run: npm run test
+
+  frontend-tests:
+    name: Run Frontend Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Instalar dependências do frontend
+        working-directory: frontend
+        run: npm install
+
+      - name: Executar testes do frontend
+        working-directory: frontend
+        run: npm run test
