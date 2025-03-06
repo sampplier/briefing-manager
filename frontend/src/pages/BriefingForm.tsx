@@ -12,7 +12,7 @@ const BriefingForm = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(`http://localhost:3000/briefings/${id}`).then((res) => {
+            axios.get(`http://localhost:5000/briefings/${id}`).then((res) => {
                 setNome(res.data.nome);
                 setDescricao(res.data.descricao);
                 setEstado(res.data.estado);
@@ -25,9 +25,9 @@ const BriefingForm = () => {
         const briefing = { nome, descricao, estado };
 
         if (id) {
-            await axios.put(`http://localhost:3000/briefings/${id}`, briefing);
+            await axios.put(`http://localhost:5000/briefings/${id}`, briefing);
         } else {
-            await axios.post("http://localhost:3000/briefings", briefing);
+            await axios.post("http://localhost:5000/briefings", briefing);
         }
         navigate("/");
     };

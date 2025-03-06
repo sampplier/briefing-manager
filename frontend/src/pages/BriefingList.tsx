@@ -16,11 +16,11 @@ const BriefingList = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:3000/briefings").then((res) => setBriefings(res.data));
+        axios.get("http://localhost:5000/briefings").then((res) => setBriefings(res.data));
     }, []);
 
     const handleDelete = async (id: number) => {
-        await axios.delete(`http://localhost:3000/briefings/${id}`);
+        await axios.delete(`http://localhost:5000/briefings/${id}`);
         setBriefings(briefings.filter((b) => b.id !== id));
     };
 
