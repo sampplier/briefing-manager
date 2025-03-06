@@ -1,13 +1,15 @@
-import { Router } from "express";
-import BriefingController from "../controllers/briefing.controller.ts";
+import { Router, Request, Response, NextFunction } from "express";
+import briefingController from "../controllers/briefing.controller";
 
+const router: Router = Router();
 
-const router = Router();
+const asyncHandler = (fn: Function) => (req: Request, res: Response, next: NextFunction) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+};
 
-router.post("/", (req, res) => BriefingController.criar(req, res));
-router.get("/", (req, res) => BriefingController.listar(req, res));
-router.put("/:id", (req, res) => BriefingController.editar(req, res));
-router.delete("/:id", (req, res) => BriefingController.remover(req, res));
-
+router.post("/", asyncHandler((req: Request, res: Response) => briefingController.criar(req, res)));
+router.get("/", asyncHandler((req: Request, res: Response) => briefingController.listar(req, res)));
+router.put("/:id", asyncHandler((req: Request, res: Response) => briefingController.editar(req, res)));
+router.delete("/:id", asyncHandler((req: Request, res: Response) => briefingController.remover(req, res)));
 
 export default router;
