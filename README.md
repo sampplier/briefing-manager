@@ -23,6 +23,7 @@ O **Briefing Manager** é um sistema para gerenciar briefings de clientes, permi
 ✅ Remover um briefing  
 ✅ Testes automatizados no backend e frontend  
 ✅ CI/CD no GitHub Actions para rodar testes automaticamente  
+✅ Autenticação via JWT
 
 ---
 
