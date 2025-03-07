@@ -35,7 +35,7 @@ const BriefingList = () => {
             <MenuItem value="finalizado">Finalizado</MenuItem>
             <MenuItem value="aprovado">Aprovado</MenuItem>
         </Select>
-        <Button variant="contained" className="briefing-button" onClick={() => navigate("/create")}>
+        <Button variant="contained" className="new-briefing-button" onClick={() => navigate("/create")}>
             Novo Briefing
         </Button>
     </div>

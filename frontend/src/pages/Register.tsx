@@ -27,7 +27,7 @@ const Register = () => {
                 <TextField label="Nome" fullWidth value={nome} onChange={(e) => setNome(e.target.value)} />
                 <TextField label="Email" fullWidth value={email} onChange={(e) => setEmail(e.target.value)} />
                 <TextField label="Senha" fullWidth type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
-                <Button type="submit" variant="contained">Cadastrar</Button>
+                <Button className="auth-button" type="submit" variant="contained">Cadastrar</Button>
             </form>
         </div>
     );

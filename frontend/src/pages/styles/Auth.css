@@ -1,50 +1,68 @@
-/* Contêiner geral para autenticação */
+/* Contêiner principal da página de login */
 .auth-container {
-    display: center;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 400px;
-    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha o conteúdo no centro horizontalmente */
+    justify-content: top; /* Centraliza o conteúdo verticalmente */
+    height: 100vh; /* Garante que o contêiner ocupe toda a altura da tela */
+    background-color: #f5f5f5; /* Fundo claro */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
   }
   
-  /* Título da página de autenticação */
+  /* Título do login */
   .auth-container h4 {
-    text-align: center;
-    color: #3f51b5;
     margin-bottom: 20px;
-  }
-  
-  /* Estilo para os campos de entrada */
-  .MuiTextField-root {
-    margin-bottom: 15px;
-  }
-  
-  /* Botão de ação */
-  .MuiButton-root {
-
-    width: 100%;
-    background-color: #3f51b5;
-    color: white;
-    padding: 12px;
-    font-weight: bold;
-    margin-top: 20px;
-    border-radius: 4px;
-  }
-  
-  /* Efeito hover no botão */
-  .MuiButton-root:hover {
-    background-color: #303f9f;
-  }
-  
-  /* Estilo para o botão de voltar */
-  .MuiButton-root.MuiButton-text {
+    color: #000000; 
+    font-weight: 600;
     text-align: center;
-    color: #3f51b5;
+  }
+  
+  /* Estilo para o formulário */
+  form {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima do formulário */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 8px; /* Cantos arredondados */
+  }
+  
+  /* Estilo para os campos de input */
+  .MuiTextField-root {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+  }
+  
+  /* Estilo do botão de submit */
+  .auth-button {
+    background-color: #6563ee !important; 
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    padding: 10px 0;
+    border-radius: 8px;
     margin-top: 10px;
-    font-weight: normal;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover no botão */
+  .auth-button:hover {
+    background-color: #2be262 !important; /* Cor roxa mais clara no hover */
+  }
+  
+  /* Adicionando responsividade */
+  @media (max-width: 600px) {
+    .auth-container {
+      padding: 10px;
+    }
+  
+    .auth-container h4 {
+      font-size: 1.5rem;
+    }
+  
+    .MuiTextField-root {
+      width: 100%; /* Garantir que os campos de input ocupem toda a largura */
+    }
   }
   

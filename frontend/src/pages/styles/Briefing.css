@@ -1,93 +1,129 @@
 .briefing-container {
-    /* Estilização geral */
-    max-width: 600px;
-    width: 100%;
-    background: #6A0DAD ;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  /* Título */
-  .briefing-title {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #D3D3D3;
-  }
-  /* Filtro */
-  .briefing-filter {
+  /* Estilização geral */
+  max-width: 600px;
+  width: 100%;
+  background: #822ac0 ;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  height: auto;
+  overflow: auto;
+}
+/* Título */
+.briefing-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+/* Filtro */
+.briefing-filter {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+}
+/* Cards de briefing */
+.briefing-card {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  transition: transform 0.2s;
+}
+/*mouse*/
+.briefing-card:hover {
+  transform: scale(1.02);
+}
+/* formulario de briefing*/
+.briefing-form-container{
+    gap: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  /* Cards de briefing */
-  .briefing-card {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 8px;
-    background: #f5f5f5;
-    transition: transform 0.2s;
-  }
-  /*mouse*/
-  .briefing-card:hover {
-    transform: scale(1.02);
-  }
-  /* Botões */
-  .briefing-button {
-    color :#1E3A5F;
-    margin-right: 10px !important;
-    
-  }
-  .briefing-button {
-    padding: 10px 16px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.3s;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima do formulário */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 8px; /* Cantos arredondados */
+}
+/* Botões */
+.briefing-button {
+  background-color: #ffffff !important;
+  color: rgb(0, 0, 0) !important;
+  border: none;
+  margin-right: 10px !important;
+  
+}
+.new-briefing-button {
+  background-color: #1cb31c !important;
+  color: rgb(255, 254, 254) !important;
+  border: none;
+  margin-right: 10px !important;
+  
 }
 
-/* Botão de Salvar - Verde */
-.save-button {
-    background-color: #4CAF50 !important;
-    color: white !important;
-    border: none;
-}
-
-.save-button:hover {
-    background-color: #388E3C !important;
-}
-
-/* Botão de Cancelar - Vermelho */
-.cancel-button {
-    background-color: transparent;
-    color: #FF4D4D !important;
-    border: 2px solid #FF4D4D !important;
-}
-
-.cancel-button:hover {
-    background-color: #FF4D4D !important;
-    color: white !important;
+.briefing-button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 /* Botão de Editar - Azul */
 .edit-button {
-    background-color: #2527af !important;
-    color: white !important;
-    border: none;
+  background-color: #2527af !important;
+  color: white !important;
+  border: none;
 }
 
 .edit-button:hover {
-    background-color: #0400ff !important;
+  background-color: #0400ff !important;
 }
 
 /* Botão de Remover - Vermelho */
 .remove-button {
-    background-color: transparent;
-    color: #ad2b2b !important;
-    border: 2px solid #ad2b2b !important;
+  background-color: transparent;
+  color: #ad2b2b !important;
+  border: 2px solid #ad2b2b !important;
 }
 
 .remove-button:hover {
-    background-color: #FF4D4D !important;
-    color: white !important;
+  background-color: #FF4D4D !important;
+  color: white !important;
 }
-  
+/* Botão de Salvar - Verde */
+.save-button {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  border: none;
+}
+
+.save-button:hover {
+  background-color: #388E3C !important;
+}
+
+/* Botão de Cancelar - Vermelho */
+.cancel-button {
+  background-color: transparent;
+  color: #FF4D4D !important;
+  border: 2px solid #FF4D4D !important;
+}
+
+.cancel-button:hover {
+  background-color: #FF4D4D !important;
+  color: white !important;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Um botão na esquerda, outro na direita */
+  width: 100%;
+  margin-top: 15px;
+}

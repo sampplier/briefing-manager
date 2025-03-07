@@ -36,7 +36,7 @@ const BriefingForm = () => {
     return (
         <div className="briefing-container">
         <Typography variant="h4" className="briefing-title">{id ? "Editar Briefing" : "Novo Briefing"}</Typography>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="briefing-form-container">
             <TextField 
                 label="Nome do Cliente" 
                 value={nome} 
