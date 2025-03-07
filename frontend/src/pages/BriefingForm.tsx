@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { TextField, Button, Select, MenuItem, Typography } from "@mui/material";
+import "./styles/Briefing.css"; // Importação do CSS
 
 const BriefingForm = () => {
     const [nome, setNome] = useState("");
@@ -33,19 +34,41 @@ const BriefingForm = () => {
     };
 
     return (
-        <div>
-            <Typography variant="h4">{id ? "Editar Briefing" : "Novo Briefing"}</Typography>
-            <form onSubmit={handleSubmit}>
-                <TextField label="Nome do Cliente" value={nome} onChange={(e) => setNome(e.target.value)} fullWidth />
-                <TextField label="Descrição" value={descricao} onChange={(e) => setDescricao(e.target.value)} fullWidth multiline />
-                <Select value={estado} onChange={(e) => setEstado(e.target.value)}>
-                    <MenuItem value="negociacao">Negociação</MenuItem>
-                    <MenuItem value="finalizado">Finalizado</MenuItem>
-                    <MenuItem value="aprovado">Aprovado</MenuItem>
-                </Select>
-                <Button type="submit" variant="contained">Salvar</Button>
-            </form>
-        </div>
+        <div className="briefing-container">
+        <Typography variant="h4" className="briefing-title">{id ? "Editar Briefing" : "Novo Briefing"}</Typography>
+        <form onSubmit={handleSubmit}>
+            <TextField 
+                label="Nome do Cliente" 
+                value={nome} 
+                onChange={(e) => setNome(e.target.value)} 
+                fullWidth 
+            />
+            <TextField 
+                label="Descrição" 
+                value={descricao} 
+                onChange={(e) => setDescricao(e.target.value)} 
+                fullWidth 
+                multiline 
+            />
+            <Select value={estado} onChange={(e) => setEstado(e.target.value)} fullWidth>
+                <MenuItem value="negociacao">Negociação</MenuItem>
+                <MenuItem value="finalizado">Finalizado</MenuItem>
+                <MenuItem value="aprovado">Aprovado</MenuItem>
+            </Select>
+            
+            <div className="button-container">
+                <Button type="submit" variant="contained" className="briefing-button save-button">Salvar</Button>
+                <Button 
+                    variant="outlined" 
+                    className="briefing-button cancel-button" 
+                    onClick={() => navigate("/")}
+                >
+                    Cancelar
+                </Button>
+            </div>
+        </form>
+    </div>
+    
     );
 };
 

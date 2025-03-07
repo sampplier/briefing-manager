@@ -1,0 +1,50 @@
+/* Contêiner geral para autenticação */
+.auth-container {
+    display: center;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  /* Título da página de autenticação */
+  .auth-container h4 {
+    text-align: center;
+    color: #3f51b5;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para os campos de entrada */
+  .MuiTextField-root {
+    margin-bottom: 15px;
+  }
+  
+  /* Botão de ação */
+  .MuiButton-root {
+
+    width: 100%;
+    background-color: #3f51b5;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+  
+  /* Efeito hover no botão */
+  .MuiButton-root:hover {
+    background-color: #303f9f;
+  }
+  
+  /* Estilo para o botão de voltar */
+  .MuiButton-root.MuiButton-text {
+    text-align: center;
+    color: #3f51b5;
+    margin-top: 10px;
+    font-weight: normal;
+  }
+  

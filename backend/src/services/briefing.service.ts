@@ -1,4 +1,4 @@
-import prisma from "/home/sampplier/Documentos/briefing-manager/backend/src/prisma/client";
+import prisma from "../prisma/client";
 import { Briefing, Estado } from "@prisma/client";
 
 class BriefingService {

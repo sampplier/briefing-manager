@@ -1,0 +1,93 @@
+.briefing-container {
+    /* Estilização geral */
+    max-width: 600px;
+    width: 100%;
+    background: #6A0DAD ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  /* Título */
+  .briefing-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #D3D3D3;
+  }
+  /* Filtro */
+  .briefing-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  /* Cards de briefing */
+  .briefing-card {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    transition: transform 0.2s;
+  }
+  /*mouse*/
+  .briefing-card:hover {
+    transform: scale(1.02);
+  }
+  /* Botões */
+  .briefing-button {
+    color :#1E3A5F;
+    margin-right: 10px !important;
+    
+  }
+  .briefing-button {
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+/* Botão de Salvar - Verde */
+.save-button {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border: none;
+}
+
+.save-button:hover {
+    background-color: #388E3C !important;
+}
+
+/* Botão de Cancelar - Vermelho */
+.cancel-button {
+    background-color: transparent;
+    color: #FF4D4D !important;
+    border: 2px solid #FF4D4D !important;
+}
+
+.cancel-button:hover {
+    background-color: #FF4D4D !important;
+    color: white !important;
+}
+/* Botão de Editar - Azul */
+.edit-button {
+    background-color: #2527af !important;
+    color: white !important;
+    border: none;
+}
+
+.edit-button:hover {
+    background-color: #0400ff !important;
+}
+
+/* Botão de Remover - Vermelho */
+.remove-button {
+    background-color: transparent;
+    color: #ad2b2b !important;
+    border: 2px solid #ad2b2b !important;
+}
+
+.remove-button:hover {
+    background-color: #FF4D4D !important;
+    color: white !important;
+}
+  

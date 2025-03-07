@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://samuel:senhaboa@localhost:5432/briefingsdatabase?schema=public"
 }
 
 model Briefing {
@@ -20,3 +20,10 @@ enum Estado {
   finalizado
   aprovado
 }
+model Usuario {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  email    String @unique
+  senha    String
+}
+

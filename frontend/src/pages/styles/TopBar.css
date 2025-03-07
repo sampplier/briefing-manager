@@ -1,0 +1,30 @@
+/* Topbar container */
+.MuiAppBar-root {
+    background-color: #3f51b5; /* Cor do fundo da Topbar */
+  }
+  
+  /* Alinhamento e estilo da barra */
+  .MuiToolbar-root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Estilo dos botões */
+  .MuiButton-root {
+    font-weight: bold;
+    color: white;
+    text-transform: none; /* Remover transformação de texto para botão */
+    margin: 0 10px; /* Espaçamento entre os botões */
+  }
+  
+  /* Estilo dos botões de login/cadastro */
+  .MuiButton-root:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efeito de hover nos botões */
+  }
+  
+  /* Estilo específico para o botão de logout */
+  .MuiButton-root:active {
+    background-color: rgba(255, 0, 0, 0.1); /* Efeito ao clicar no botão */
+  }
+  
