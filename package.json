@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@testing-library/react": "^16.2.0",
+    "msw": "^2.7.3"
+  }
+}

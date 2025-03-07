@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import prisma from "../prisma/client";
+import prisma from "../../prisma/client";
 
 const JWT_SECRET = process.env.JWT_SECRET || "secrettoken";
 class AuthController{
@@ -16,6 +16,7 @@ class AuthController{
     
             res.status(201).json({ message: "Usuário criado com sucesso!" });
         } catch (error) {
+            console.log(error);
             res.status(400).json({ error: "Erro ao cadastrar usuário" });
         }
     };

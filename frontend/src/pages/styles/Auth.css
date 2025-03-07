@@ -50,6 +50,11 @@
   .auth-button:hover {
     background-color: #2be262 !important; /* Cor roxa mais clara no hover */
   }
+
+  .auth-button:focus {
+    outline: none;
+    box-shadow: none;  /* Remove qualquer sombra adicional */
+  }
   
   /* Adicionando responsividade */
   @media (max-width: 600px) {
@@ -65,4 +70,3 @@
       width: 100%; /* Garantir que os campos de input ocupem toda a largura */
     }
   }
-  

@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../server";
-import prismaTest from "../prisma/test.client";
+import prismaTest from "../../prisma/test.client";
 
 beforeAll(async () => {
     await prismaTest.briefing.deleteMany();

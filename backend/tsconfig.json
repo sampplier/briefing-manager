@@ -16,7 +16,7 @@
     "target": "ES6",
     "rootDir": "./src",
     "typeRoots": ["./node_modules/@types", "./typings"],
-    "types": ["node", "babel__core", "babel__generator", "babel__template", "babel__traverse"],                              /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "types": ["node", "jest","babel__core", "babel__generator", "babel__template", "babel__traverse"],                              /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     // "libReplacement": true,                           /* Enable lib replacement. */

@@ -21,6 +21,13 @@
   gap: 16px;
 }
 
+
+.topbar-button:focus{
+  outline: none;
+  box-shadow: none;  /* Remove qualquer sombra adicional */
+}
+
+
 /* Estilo dos botões */
 .topbar-button {
   color: #ffffff !important;

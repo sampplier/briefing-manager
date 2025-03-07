@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import prisma from "../prisma/client";
+import prisma from "../../prisma/client";
 
 const SECRET_KEY = process.env.JWT_SECRET || "supersecretkey";
 

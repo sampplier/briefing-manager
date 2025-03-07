@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Briefing {
+  id         Int      @id @default(autoincrement())
+  nome       String
+  descricao  String
+  dataHora   DateTime @default(now())
+  estado     Estado
+}
+
+enum Estado {
+  negociacao
+  finalizado
+  aprovado
+}
+model Usuario {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  email    String @unique
+  senha    String
+}
+
