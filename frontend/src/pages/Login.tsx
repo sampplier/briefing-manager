@@ -8,7 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const auth = useContext(AuthContext);
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -24,8 +24,8 @@ const Login = () => {
         <div className="auth-container">
             <Typography variant="h4">Login</Typography>
             <form onSubmit={handleSubmit}>
-                <TextField label="Email" fullWidth value={email} onChange={(e) => setEmail(e.target.value)} />
-                <TextField label="Senha" fullWidth type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                <TextField label="Email" fullWidth value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                <TextField label="Senha" fullWidth type="password" value={senha} onChange={(e) => setSenha(e.target.value)} required/>
                 <Button className="auth-button" type="submit" variant="contained">Entrar</Button>
             </form>
         </div>

@@ -8,8 +8,14 @@ class AuthController{
     register = async (req: Request, res: Response) => {
         const { nome, email, senha } = req.body;
     
-        const hashedPassword = await bcrypt.hash(senha, 10);
         try {
+            const existingUser = await prisma.usuario.findUnique({ where: { email } });
+    
+            if (existingUser) {
+                return res.status(400).json({ error: "E-mail já cadastrado" });
+            }
+    
+            const hashedPassword = await bcrypt.hash(senha, 10);
             const user = await prisma.usuario.create({
                 data: { nome, email, senha: hashedPassword },
             });
@@ -17,23 +23,35 @@ class AuthController{
             res.status(201).json({ message: "Usuário criado com sucesso!" });
         } catch (error) {
             console.log(error);
-            res.status(400).json({ error: "Erro ao cadastrar usuário" });
+            res.status(500).json({ error: "Erro ao cadastrar usuário" });
         }
     };
+    
     
     login = async (req: Request, res: Response) => {
         const { email, senha } = req.body;
     
-        const user = await prisma.usuario.findUnique({ where: { email } });
-        if (!user) return res.status(401).json({ error: "Usuário não encontrado" });
+        try {
+            const user = await prisma.usuario.findUnique({ where: { email } });
     
-        const validPassword = await bcrypt.compare(senha, user.senha);
-        if (!validPassword) return res.status(401).json({ error: "Senha inválida" });
+            if (!user) {
+                return res.status(401).json({ error: "Usuário não encontrado" });
+            }
     
-        const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: "1h" });
+            const validPassword = await bcrypt.compare(senha, user.senha);
+            if (!validPassword) {
+                return res.status(401).json({ error: "Senha incorreta" });
+            }
     
-        res.json({ token });
+            const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: "1h" });
+    
+            res.json({ token });
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: "Erro ao processar login" });
+        }
     };
+    
 }
 const authController = new AuthController();
 export default new AuthController();

@@ -24,9 +24,9 @@ const Register = () => {
         <div className="auth-container">
             <Typography variant="h4">Cadastro</Typography>
             <form onSubmit={handleSubmit}>
-                <TextField label="Nome" fullWidth value={nome} onChange={(e) => setNome(e.target.value)} />
-                <TextField label="Email" fullWidth value={email} onChange={(e) => setEmail(e.target.value)} />
-                <TextField label="Senha" fullWidth type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+                <TextField label="Nome" fullWidth value={nome} onChange={(e) => setNome(e.target.value)} required/>
+                <TextField label="Email" fullWidth value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                <TextField label="Senha" fullWidth type="password" value={senha} onChange={(e) => setSenha(e.target.value)} required/>
                 <Button className="auth-button" type="submit" variant="contained">Cadastrar</Button>
             </form>
         </div>

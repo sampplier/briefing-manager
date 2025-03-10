@@ -42,6 +42,7 @@ const BriefingForm = () => {
                 value={nome} 
                 onChange={(e) => setNome(e.target.value)} 
                 fullWidth 
+                required
             />
             <TextField 
                 label="Descrição" 
@@ -49,6 +50,7 @@ const BriefingForm = () => {
                 onChange={(e) => setDescricao(e.target.value)} 
                 fullWidth 
                 multiline 
+                required
             />
             <Select value={estado} onChange={(e) => setEstado(e.target.value)} fullWidth>
                 <MenuItem value="negociacao">Negociação</MenuItem>
