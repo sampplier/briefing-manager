@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Gera o Prisma Client
-RUN npx prisma generate --schema=src/prisma/schema.prisma
+RUN npx prisma generate --schema=prisma/schema.prisma
 
 # Expõe a porta do backend
 EXPOSE 5000
